@@ -3,13 +3,21 @@ html
     head
         link(href='https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css', rel='stylesheet')
         link(href='css/main.css', rel='stylesheet')
-    body
+        link(href='css/leaflet.css', rel='stylesheet')
+        script(src='js/vendor/angular.min.js')
+        script(src='js/vendor/leaflet.js')
+        script(src='js/vendor/angular-leaflet-directive.min.js')
+
+    body(ng-app='NearMeApp')
         .header
             .container-fluid
                 h1.pull-left NearMe
-        .main
+        .main(ng-controller='MainController')
             #map-canvas.container-fluid
+                leaflet(center="mapCenter", markers='mapMarkers')
         // Modules
+        script(src='js/app.js')
         // Controllers
+        script(src='js/controllers/MainController.js')
         // Directives
         // Services
