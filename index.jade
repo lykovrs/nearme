@@ -5,6 +5,7 @@ html
         link(href='css/main.css', rel='stylesheet')
         link(href='css/leaflet.css', rel='stylesheet')
         script(src='js/vendor/angular.min.js')
+        script(src='js/vendor/angular-route.min.js')
         script(src='js/vendor/leaflet.js')
         script(src='js/vendor/angular-leaflet-directive.min.js')
         script(src='js/vendor/helpers.js')
@@ -12,13 +13,13 @@ html
         .header
             .container-fluid
                 h1.pull-left NearMe
-        .main(ng-controller='MainController')
-            #map-canvas.container-fluid
-                leaflet(center="mapCenter", markers='mapMarkers')
+                a.pull-right(href='#/about') About
+        div(ng-view)
         // Modules
         script(src='js/app.js')
         // Controllers
         script(src='js/controllers/MainController.js')
+        script(src='js/controllers/AboutController.js')
         // Directives
         // Services
         script(src='js/services/places.js')
